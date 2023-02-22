@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&family=Tilt+Warp&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  width: 20vw;
+  height: 65vh;
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  margin-left: -10vw;
+  margin-top: -32.5vh;
+  transition: 1s;
+}
+section article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+section article .inner {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 5vh 2.5vw 8vh;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0.6;
+}
+
+.btnPrev {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20vw, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  font-size: 0;
+  padding-left: 20px;
+}
+.btnPrev::before, .btnPrev::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  left: 0px;
+  transform-origin: left center;
+  transform: rotate(-180deg);
+  transition: 0.5s;
+}
+.btnPrev::after {
+  transform: rotate(180deg);
+}
+.btnPrev:hover span {
+  transform: translate(100%, 0);
+  opacity: 0;
+}
+.btnPrev:hover::before {
+  transform: rotate(-30deg);
+}
+.btnPrev:hover::after {
+  transform: rotate(30deg);
+}
+.btnPrev span {
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.btnNext {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(20vw, -50%);
+  display: flex;
+  cursor: pointer;
+  font-size: 0;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 20px;
+}
+.btnNext::before, .btnNext::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform-origin: right center;
+  transform: rotate(-180deg);
+  transition: 0.5s;
+}
+.btnNext::after {
+  transform: rotate(180deg);
+}
+.btnNext:hover span {
+  transform: translate(-100%, 0);
+  opacity: 0;
+}
+.btnNext:hover::before {
+  transform: rotate(-30deg);
+}
+.btnNext:hover::after {
+  transform: rotate(30deg);
+}
+.btnNext span {
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+body {
+  font: 16px/1 "Quicksand";
+}
+
+figure {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(25deg, #d9a7c7, #fffcdc);
+}
+figure h1 {
+  position: absolute;
+  top: 7vh;
+  left: 4vw;
+  font-size: 0;
+}
+figure h1 strong {
+  font: bold 40px/1.4 "Tilt Warp";
+  color: #3f4c6b;
+  letter-spacing: 2px;
+}
+figure h1 span {
+  font: 17px/1 "Tilt Warp";
+  color: #606c88;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+figure .menu {
+  position: absolute;
+  top: 8vh;
+  right: 4vw;
+  font-size: 30px;
+  color: #3f4c6b;
+}
+figure > p {
+  position: absolute;
+  bottom: 7vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font: 16px/1 "Tilt Warp";
+  color: rgba(96, 108, 136, 0.7725490196);
+}/*# sourceMappingURL=style.css.map */

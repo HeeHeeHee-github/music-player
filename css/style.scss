@@ -1,2 +1,55 @@
 @charset "UTF-8";
 @import "reset";
+@import "panel";
+@import "btns";
+
+// FONT
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&family=Tilt+Warp&display=swap");
+// font-family: 'Quicksand', sans-serif;
+// font-family: 'Tilt Warp', cursive;
+
+body {
+  font: 16px/1 "Quicksand";
+}
+
+figure {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(25deg, #d9a7c7, #fffcdc);
+
+  h1 {
+    position: absolute;
+    top: 7vh;
+    left: 4vw;
+    font-size: 0;
+    strong {
+      font: bold 40px/1.4 "Tilt Warp";
+      color: #3f4c6b;
+      letter-spacing: 2px;
+    }
+    span {
+      font: 17px/1 "Tilt Warp";
+      color: #606c88;
+      opacity: 0.8;
+      letter-spacing: 1px;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    top: 8vh;
+    right: 4vw;
+    font-size: 30px;
+    color: #3f4c6b;
+  }
+  > p {
+    position: absolute;
+    bottom: 7vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font: 16px/1 "Tilt Warp";
+    color: #606c88c5;
+  }
+}
