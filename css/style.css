@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand&family=Tilt+Warp&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Tilt+Warp&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -31,16 +31,117 @@ section article {
   top: 0px;
   left: 0px;
 }
+section article.on .inner {
+  opacity: 1;
+  transform: scale(1);
+}
 section article .inner {
   width: 100%;
   height: 100%;
   background-color: #fff;
   padding: 5vh 2.5vw 8vh;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0.5;
+  transform: scale(0.8);
+  transition: 0.9s;
+}
+section article .inner .pic {
+  width: 15vw;
+  height: 15vw;
+  position: relative;
+  background-size: 0;
+}
+section article .inner .pic::before, section article .inner .pic::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: inherit;
+}
+section article .inner .pic::before {
+  transform: translateY(10%);
+  filter: blur(20px) brightness(130%);
+}
+section article .inner .pic.on::before {
+  animation: rotation2 4s linear infinite;
+}
+section article .inner .pic.on::after {
+  animation: rotation 4s linear infinite;
+}
+section article .inner .pic .dot {
+  position: absolute;
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+section article .inner .text {
+  position: absolute;
+  width: 15vw;
+  text-align: center;
+  margin-top: 60px;
+  letter-spacing: 1px;
+}
+section article .inner h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 26px;
+}
+section article .inner P {
+  color: #777;
+}
+section article .inner .control {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  font-size: 20px;
+}
+section article .inner li {
+  cursor: pointer;
   opacity: 0.6;
+  transition: 0.5s;
+}
+section article .inner li.play {
+  transform: scale(1.5);
+  opacity: 0.8;
+}
+section article .inner li:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}
+section article .inner li:hover.play {
+  transform: scale(2);
 }
 
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotation2 {
+  0% {
+    transform: translateY(10%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(10%) rotate(360deg);
+  }
+}
 .btnPrev {
   width: 60px;
   height: 60px;
@@ -81,7 +182,7 @@ section article .inner {
   transform: rotate(30deg);
 }
 .btnPrev span {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 18px;
   color: #fff;
   transition: 0.5s;
@@ -128,7 +229,7 @@ section article .inner {
   transform: rotate(30deg);
 }
 .btnNext span {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 18px;
   color: #fff;
   opacity: 1;
